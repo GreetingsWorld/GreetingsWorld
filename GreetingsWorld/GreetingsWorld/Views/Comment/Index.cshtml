@@ -22,38 +22,20 @@
                     @obj.world
                 </td>
             </tr>
+
+            <tr>
+                <th>Commenter Name</th>
+                <td>@obj.commenter</td>
+            </tr>
+            <tr>
+                <th>Comment</th>
+                <td width="10%">@obj.comment</td>
+            </tr>
         }
     </tbody>
 </table>
 
-<table>
-    <thead>
-        <tr>
-            <th>
-                Commenter Name
-            </th>
-            <th>
-                Comment
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var obj in Model)
-        {
-            <tr>
-                <td width="10%">
-                    @obj.commenter
-                </td>
-            </tr>
-            <tr>
-                <td width="10%">
-                    @obj.comment
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
-<div>
+<div style="text-align: center; margin: auto;">
     <a asp-controller="Comment" asp-action="AddComment" class="btn btn-secondary">
         Add your own comment with this button!
     </a>
