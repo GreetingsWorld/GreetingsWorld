@@ -1,0 +1,65 @@
+﻿@model List<FacilityPatient>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<table class="table table-bordered table-striped" style="width:80%; margin:0 auto; text-align: center;">
+    <thead>
+        <tr>
+            <th>
+                Facility Id
+            </th>
+            <th>
+                Facility Name
+            </th>
+            <th>
+                Facility State
+            </th>
+            <th>
+                Patient Id
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td width="10%">
+                    @obj.facilityId
+                </td>
+                <td width="10%">
+                    @obj.facilityName
+                </td>
+                <td width="10%">
+                    @obj.facilityState
+                </td>
+                <td width="10%">
+                    @obj.PatientId
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-controller="Facility" asp-action="UpdatePage">Click HERE to Update!!</a>
+
+@*foreach(var obj in Model)
+{
+    <form method="post" style="width:30%; margin:0 auto; text-align: center; margin-top: 50px;">
+        <div class="border p-3 mt-4">
+            <div class="row p-b2">
+                <h2 class="text-primary">Change Patient Facility</h2>
+            </div>                
+                <div>
+                    <label asp-for="@obj.facilityId"></label>
+                    <input asp-for="@obj.facilityId" class="form-control" />
+                    <span asp-validation-for="@obj.facilityId" class="text-danger>"></span>
+                </div>
+                <div>
+                    <label asp-for="@obj.PatientId"></label>
+                    <input asp-for="@obj.PatientId" class="form-control" />
+                    <span asp-validation-for="@obj.PatientId" class="text-danger>"></span>
+                </div>
+                <a asp-controller="Facility" asp-action="Edit" asp-route-id="@obj.facilityId, @obj.PatientId" type="submit" class="btn button-light button-primary" style="width: 150px;"> </a>
+            </div>
+    </form>
+}*@

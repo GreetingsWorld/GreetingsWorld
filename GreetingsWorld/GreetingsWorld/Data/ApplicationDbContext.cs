@@ -13,6 +13,9 @@ namespace GreetingsWorld.Data
         public DbSet<World> Worlds { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Animal> Animals { get; set; }
+        public DbSet<Patient> Patients { get; set; }
+        public DbSet<Facility> Facilities { get; set; }
+        public DbSet<FacilityPatient> Facility_Patient { get; set; }
         public DbSet<Comment> Comments { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -15,7 +15,7 @@ namespace GreetingsWorld.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index(int worldId)
+        public IActionResult Edit(int worldId)
         {
             IEnumerable<Comment> commentQuery =
                 (from Comments in _db.Comments

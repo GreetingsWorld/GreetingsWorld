@@ -1,0 +1,26 @@
+﻿@model List<FacilityPatient>
+@{
+    ViewData["Title"] = "UpdatePage";
+}
+
+<h1 style="text-align: center; color: gold">Update things here!</h1>
+<p style="text-align: center;">Enter in a patient Id and their new facility to move them below.</p>
+
+<form method="Put" style="width:30%; margin:0 auto; text-align: center; margin-top: 50px;">
+    <div class="border p-3 mt-4">
+        <div class="row p-b2">
+            <h2 class="text-primary">Change Patient Facility</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            @using (Html.BeginForm("Edit", "Facility"))
+            {
+                <label type="text" id="Model.facilityId">fac</label>
+                <input type="text" id="Model.facilityId" name="facilityId">
+                <label type="text" id="Model.PatientId">pat</label>
+                <input type="text" id="Model.PatientId" name="PatientId">
+                <input type="submit" value="Click" a asp-controller="Facility" asp-action="Edit" asp-route-id="facilityId, PatientId" />
+            }
+    <a asp-controller="Facility" asp-action="Edit" asp-route-id="facilityId, patientId">Click HERE to Update!!</a>
+    </div>
+</form>
