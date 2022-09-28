@@ -1,0 +1,40 @@
+﻿@model Animal
+@{
+    ViewData["Title"] = "AddAnimal";
+}
+
+<h1 style="text-align: center; color: gold; margin-top: 50px;">Create your own animal here!</h1>
+<p style="text-align: center; margin-top: 40px;">Enter in the species of snake that you'd like to add to the pit and watch it magically appear!</p>
+<p style="text-align: center;">Give it a try!</p>
+
+<form method="Post" style="width:30%; margin:0 auto; text-align: center; margin-top: 50px;">
+    <div class="border p-3 mt-4">
+        <div class="row p-b2">
+            <h2 class="text-primary">Add a snake here!</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="species"></label>
+            <input asp-for="species" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a asp-controller="Zoo" asp-action="AddAnimal"></a>
+    </div>
+</form>
+
+<p>Once you have made some animals you can go back and do some of the other things more!</p>
+
+<table class="table table-bordered table-striped" style="width:20%; margin:0 auto; text-align: center; margin-top: 30px;">
+    <tbody>
+        <tr>
+            <td width="10%">
+                <a asp-controller="Zoo" asp-action="Index">Pet more animals Hereee</a>
+            </td>
+        </tr>
+        <tr>
+            <td width="10%">
+                <a asp-controller="Home" asp-action="Index">...Or return home with this button.</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

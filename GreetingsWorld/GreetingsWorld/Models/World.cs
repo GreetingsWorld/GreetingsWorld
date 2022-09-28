@@ -40,12 +40,5 @@ namespace GreetingsWorld.Models
             }
             throw new TypeNotFound();
         }
-
-        /*
-        public string GetName(World worldInstance)
-        {
-            string worldName = worldInstance.name;
-            return worldName;
-        }*/
     }
 }

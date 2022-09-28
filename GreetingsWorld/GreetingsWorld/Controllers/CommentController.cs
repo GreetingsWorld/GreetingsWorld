@@ -14,6 +14,7 @@ namespace GreetingsWorld.Controllers
             _db = db;
         }
 
+        [HttpGet]
         public IActionResult Index(int worldId)
         {
             IEnumerable<Comment> commentQuery =
@@ -28,10 +29,12 @@ namespace GreetingsWorld.Controllers
             return View("Index", commentQuery);
         }
 
+        [HttpGet]
         public IActionResult None()
         {
             return View();
         }
+
 
         public IActionResult addComment()
         {

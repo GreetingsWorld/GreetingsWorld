@@ -14,11 +14,13 @@ namespace GreetingsWorld.Controllers
             _db = db;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
 
+        [HttpGet]
         public IActionResult ChooseAgain()
         {
             return View();
@@ -27,9 +29,11 @@ namespace GreetingsWorld.Controllers
         [HttpPost]
         public IActionResult Result(int animalId)
         {
-            if(animalId <= 0 || animalId > 10)
+            List<Animal> animalCount = _db.Animals.ToList();
+
+            if (animalId <= 0 || animalId > animalCount.Count)
             {
-                return RedirectToRoute(new { controller = "Zoo", action = "ChooseAgain"});
+                return RedirectToRoute(new { controller = "Zoo", action = "ChooseAgain" });
             }
 
             List<Animal> animalList = new List<Animal>();
@@ -54,6 +58,11 @@ namespace GreetingsWorld.Controllers
             animalList.Add(animalInstance);
 
             return View("Result", animalList);
+        }
+
+        public IActionResult AddAnimal()
+        {
+            return View();
         }
     }
 }
