@@ -2,7 +2,64 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    #main {
+        height: 87.75vh;
+        width: 1920px;
+        overflow-y: hidden !important;
+    }
+
+    .tm {
+        height: 15vh;
+    }
+
+    .bm {
+        margin-top: -15px;
+        height: 30vh;
+    }
+
+    @@-webkit-keyframes spin { 
+        100% { -webkit-transform: rotate(360deg); }
+    }
+
+    @@-webkit-keyframes spin1 {
+        100% { -webkit-transform: rotate(-360deg); }
+    }
+
+
+    .image3{
+        animation: spin 75s linear infinite;
+    } 
+
+    .image2{
+        animation: spin1 85s linear infinite;
+    } 
+
+    .spin
+    {
+	    animation: spin 75s linear infinite;
+    }
+
+    .spin1
+    {
+	    animation: spin1 85s linear infinite;
+    }
+</style>
+
+<div class="text-center container" id="main">
+    <h2 class="display-4" style="margin-top: 35px;">Hello!.... World(s).</h2>
+    <div class="tm rotating" id="test">
+        <a href="World"><img class="image2"src="https://app.pixelencounter.com/api/basic/stars?disableBackground=true&height=200&width=200"></a>
+    </div>
+    <div class="bm spinning">
+        <a href="World"><img class="image3" href="World" src="https://app.pixelencounter.com/api/basic/planets?disableBackground=true&frame=450&height=500&width=500"></a>
+    </div>
+    <p style="margin-top: 250px; color: gold">A new way to greet the planets at your own convenience.</p>
+</div>
+<div>
+    <footer>
+        <div>
+            &copy; 2022 - GreetingsWorld - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
 </div>

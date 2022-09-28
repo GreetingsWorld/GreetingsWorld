@@ -9,7 +9,7 @@ namespace GreetingsWorld.Data
     {
         public static void Initialize(ApplicationDbContext context)
         {
-            if (context.Users.Any())
+            if (context.Comments.Any())
             {
                 return;
             }
@@ -22,14 +22,14 @@ namespace GreetingsWorld.Data
                 new World{name = "Earth", numberGreetings = 0, celestialVariety = BodyType.Rocky_Planet, birthDay = DateTime.Parse("1990-09-12"), funFact = "You've probably been here."},
                 new World{name = "The Freakin' Moon", numberGreetings = 12, celestialVariety = BodyType.Moon, birthDay = DateTime.Parse("1969-04-20"), funFact = "Thank goodness for this one."},
                 new World{name = "Mars", numberGreetings = 5, celestialVariety = BodyType.Rocky_Planet, birthDay = DateTime.Parse("1998-09-01"), funFact = "Contrary to popular belief, Elon Musk actually CAME from here..."},
-                new World{name = "Jupiter", numberGreetings = 0, celestialVariety = BodyType.Gas_Giant, birthDay = DateTime.Parse("1543-11-16"), funFact = "It is embarrased everybody stares at its spot."},
-                new World{name = "Saturn", numberGreetings = 0, celestialVariety = BodyType.Gas_Giant, birthDay = DateTime.Parse("1543-07-04"), funFact = "The prettiest planet?"},
-                new World{name = "Uranus", numberGreetings = 0, celestialVariety = BodyType.Ice_Giant, birthDay = DateTime.Parse("1781-04-26"), funFact = "Favorite movie - Sideways."},
-                new World{name = "Neptune", numberGreetings = 0, celestialVariety = BodyType.Ice_Giant, birthDay = DateTime.Parse("1851-09-23"), funFact = "So cold."},
-                new World{name = "Pluto", numberGreetings = 0, celestialVariety = BodyType.Whatever_Pluto_Is_Nowadays, birthDay = DateTime.Parse("1930-01-23"), funFact = "(It's a Dwarf Planet last I checked..."},
+                new World{name = "Jupiter", numberGreetings = 1, celestialVariety = BodyType.Gas_Giant, birthDay = DateTime.Parse("1543-11-16"), funFact = "It is embarrased everybody stares at its spot."},
+                new World{name = "Saturn", numberGreetings = 7, celestialVariety = BodyType.Gas_Giant, birthDay = DateTime.Parse("1543-07-04"), funFact = "The prettiest planet?"},
+                new World{name = "Uranus", numberGreetings = 3, celestialVariety = BodyType.Ice_Giant, birthDay = DateTime.Parse("1781-04-26"), funFact = "Favorite movie - Sideways."},
+                new World{name = "Neptune", numberGreetings = 4, celestialVariety = BodyType.Ice_Giant, birthDay = DateTime.Parse("1851-09-23"), funFact = "So cold."},
+                new World{name = "Pluto", numberGreetings = 2, celestialVariety = BodyType.Whatever_Pluto_Is_Nowadays, birthDay = DateTime.Parse("1930-01-23"), funFact = "(It's a Dwarf Planet last I checked..."},
                 new World{name = "Charon", numberGreetings = 0, celestialVariety = BodyType.Moon, birthDay = DateTime.Parse("1978-06-22"), funFact = "I think we called it planet X for a while."},
-                new World{name = "Proxima Centauri B", numberGreetings = 0, celestialVariety = BodyType.ExoPlanet, birthDay = DateTime.Parse("2016-08-24"), funFact = "Close, but no cigar."},
-                new World{name = "Ton 618", numberGreetings = 0, celestialVariety = BodyType.Black_Hole, birthDay = DateTime.Parse("1957-02-29"), funFact = "Thankfully not so close."},
+                new World{name = "Proxima Centauri B", numberGreetings = 1, celestialVariety = BodyType.ExoPlanet, birthDay = DateTime.Parse("2016-08-24"), funFact = "Close, but no cigar."},
+                new World{name = "Ton 618", numberGreetings = 618, celestialVariety = BodyType.Black_Hole, birthDay = DateTime.Parse("1956-02-29"), funFact = "Thankfully not so close."},
             };
 
             context.Worlds.AddRange(worlds);

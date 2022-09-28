@@ -1,0 +1,51 @@
+﻿@model IEnumerable<World>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="text-align: center; color: gold">Worlds</h1>
+<p style="text-align: center;">Click on a planet name to see what people are saying :3</p>
+
+<table class="table table-bordered table-striped" style="width:80%; margin:0 auto; text-align: center;">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Number of Greetings.
+            </th>
+            <th>
+                Type of Celestial Body
+            </th>
+            <th>
+                Birthday
+            </th>
+            <th>
+                Fun Fact
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td width="10%">
+                    @obj.name
+                </td>
+                <td width="10%">
+                    @obj.numberGreetings
+                </td>
+                <td width="10%">
+                    @obj.TypeToString(obj.celestialVariety)
+                </td>
+                <td width="10%" #dateTmpl>
+                    @obj.birthDay.ToShortDateString()
+                </td>
+                <td width="10%">
+                    @obj.funFact
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
