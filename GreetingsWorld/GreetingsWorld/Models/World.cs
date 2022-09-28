@@ -1,4 +1,6 @@
-﻿using GreetingsWorld.Enums;
+﻿using GreetingsWorld.Data;
+using GreetingsWorld.Enums;
+using Microsoft.EntityFrameworkCore;
 using NuGet.DependencyResolver;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -38,12 +40,12 @@ namespace GreetingsWorld.Models
             }
             throw new TypeNotFound();
         }
-        /*method outline
-        public string DisplayName(Teacher teacher)
+
+        /*
+        public string GetName(World worldInstance)
         {
-            teacher.TeacherInstance.legalName = teacher.GetName(teacher);
-            string teacherName = teacher.TeacherInstance.legalName;
-            return teacherName;
+            string worldName = worldInstance.name;
+            return worldName;
         }*/
     }
 }

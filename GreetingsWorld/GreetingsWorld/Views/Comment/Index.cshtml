@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Comment>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="text-align: center; color: gold">Comments</h1>
+<p style="text-align: center;">Here you can see how different people have greeted the planets, and even leave a greeting yourself! [Beta]</p>
+
+<table class="table table-bordered table-striped" style="width:80%; margin:auto; text-align: center; margin-top:30px;">
+    <thead>
+        <tr>
+            <th>
+                Planet Name
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td width="30%">
+                    @obj.world
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                Commenter Name
+            </th>
+            <th>
+                Comment
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td width="10%">
+                    @obj.commenter
+                </td>
+            </tr>
+            <tr>
+                <td width="10%">
+                    @obj.comment
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-controller="Comment" asp-action="AddComment" class="btn btn-secondary">
+        Add your own comment with this button!
+    </a>
+
+    <a asp-controller="World" asp-action="Index" class="btn btn-secondary">
+        ...or return to the worlds page here.
+    </a>
+</div>

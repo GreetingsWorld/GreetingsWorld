@@ -1,7 +1,6 @@
 ﻿using GreetingsWorld.Data;
 using GreetingsWorld.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
 
 namespace GreetingsWorld.Controllers
 {

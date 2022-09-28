@@ -1,0 +1,28 @@
+﻿@model Comment
+
+@{
+    ViewData["Title"] = "None";
+}
+
+<h1 style="text-align: center; color: gold; margin-top: 40px;">This celestial body is lonely!!</h1>
+<p style="text-align: center; margin-top: 10px;">It doesn't look like anyone has greeted this planet yet, but if you write a comment and hit the button below, you can be the first!</p>
+
+<form method="post">
+    <div style="margin-top: 50px; text-align: center;">
+        <div style="margin: auto;">
+            <label for="cName"><i class="userName"></i>Enter your name here!</label>
+            <input class="form-control" type="text" asp-for="@Model.commenter.name" placeholder="username or real name idc" formControlName="cName" maxlength="30" style="width: 300px; text-align: center; margin:auto;">
+        </div>
+        <div style="margin-top: 15px;">
+            <label for="comment"><i class="fa fa-user"></i>Enter your comment here!</label>
+            <input class="form-control" type="text" asp-for="@Model.comment" placeholder="Comment here..." style="width: 450px; justify-content: flex-start; word-break:break-all; word-wrap: break-word; margin:auto;">
+        </div>
+    </div>
+
+    <div style="margin-top: 30px; text-align: center;">
+        <button type="submit" class="btn btn-primary">Submit Greeting! :D</button>
+        <a asp-controller="World" asp-action="Index" class="btn btn-secondary">
+            ...or return to the worlds page.
+        </a>
+    </div>
+</form>

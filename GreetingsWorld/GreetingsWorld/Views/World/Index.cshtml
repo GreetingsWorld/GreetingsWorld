@@ -28,10 +28,13 @@
     </thead>
     <tbody>
         @foreach (var obj in Model)
-        {
+        {            
             <tr>
                 <td width="10%">
-                    @obj.name
+                    @using (Html.BeginForm())
+                    {
+                        @Html.ActionLink(@obj.name, "Index", "Comment", new { @obj.worldId}, null)
+                    }
                 </td>
                 <td width="10%">
                     @obj.numberGreetings
