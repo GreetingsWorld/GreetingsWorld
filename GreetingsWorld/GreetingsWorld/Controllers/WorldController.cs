@@ -13,6 +13,7 @@ namespace GreetingsWorld.Controllers
             _db = db;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             IEnumerable<World> objClassList = _db.Worlds.ToList();
