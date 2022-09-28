@@ -1,0 +1,28 @@
+﻿@model Animal
+@{
+    ViewData["Title"] = "ChooseAgain";
+}
+
+<h1 style="text-align: center; color: gold; margin-top: 50px;">Hey! We don't have that many snakes... I mean animals yet! Try another! (1-10)</h1>
+<p style="text-align: center; margin-top: 40px;">(If you want)</p>
+<p style="text-align: center; margin-top: 40px;">Select an animal by it's ID number, or press a button for a surprise animal!</p>
+<p style="text-align: center;">Give it a try!</p>
+
+<table class="table table-bordered table-striped" style="width:30%; margin:0 auto; text-align: center; margin-top: 50px;">
+    <tbody>
+        <tr>
+            <td width="10%">
+                @using (Html.BeginForm("Result", "Zoo"))
+                {
+                    <input type="text" id="animalId" name="animalId">
+                    <input type="submit" value="Click" />
+                }
+            </td>
+        </tr>
+        <tr>
+            <td width="10%">
+                <a asp-controller="Zoo" asp-action="RandomResult">Click Here to generate a random animal :)</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

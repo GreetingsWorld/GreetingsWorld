@@ -3,19 +3,18 @@
     ViewData["Title"] = "Index";
 }
 
-<h1 style="text-align: center; color: gold">Welcome to the Kidz Zone ;D</h1>
-<p style="text-align: center;">Here you can either select an animal by it's ID number, or press a button for a surprise animal!</p>
+<h1 style="text-align: center; color: gold; margin-top: 50px;">Welcome to the Kidz Zone ;D</h1>
+<p style="text-align: center; margin-top: 40px;">Here you can either select an animal by it's ID number, or press a button for a surprise animal!</p>
 <p style="text-align: center;">Give it a try!</p>
 
-<table class="table table-bordered table-striped" style="width:80%; margin:0 auto; text-align: center;">
+<table class="table table-bordered table-striped" style="width:30%; margin:0 auto; text-align: center; margin-top: 50px;">
     <tbody>
             <tr>
                 <td width="10%">
-                    @using (Html.BeginForm())
+                    @using (Html.BeginForm("Result", "Zoo"))
                     {
-                        @Html.EditorFor(model => model.animalId, new { htmlAttributes = new { @class = "form-control", id = "animalId" }})
-                        <a asp-controller="Zoo" asp-action="Result">Click to greet the animal you chose :)</a>
-                        @*@Html.ActionLink( "Click here to summon your animal <3" , "Result", "Zoo", new { @Model.animalId}, null)*@
+                        <input type ="text" id = "animalId" name="animalId">
+                        <input type="submit" value="Click" />
                     }
                 </td>
             </tr>

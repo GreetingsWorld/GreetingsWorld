@@ -19,16 +19,29 @@ namespace GreetingsWorld.Controllers
             return View();
         }
 
-        public IActionResult Result(int animalId)
+        public IActionResult ChooseAgain()
         {
-            IEnumerable<Animal> animalQuery =
-                (from Animals in _db.Animals
-                 where Animals.animalId == animalId
-                 select Animals).ToList();
-
-            return View("Result", animalQuery);
+            return View();
         }
 
+        [HttpPost]
+        public IActionResult Result(int animalId)
+        {
+            if(animalId <= 0 || animalId > 10)
+            {
+                return RedirectToRoute(new { controller = "Zoo", action = "ChooseAgain"});
+            }
+
+            List<Animal> animalList = new List<Animal>();
+
+            Animal animalInstance = _db.Animals.Find(animalId);
+
+            animalList.Add(animalInstance);
+
+            return View("Result", animalList);
+        }
+
+        [HttpGet]
         public IActionResult RandomResult()
         {
             Random rand = new Random();
